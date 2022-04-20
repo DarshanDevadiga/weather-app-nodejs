@@ -2,7 +2,7 @@ const express = require("express");
 const fetch = require("node-fetch");
 const bodyParser = require("body-parser");
 const app = express();
-
+ var PORT = process.env.PORT || 4000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
@@ -33,6 +33,6 @@ app.post("/", async (req, res) => {
     }
 });
 
-app.listen(4000, () => {
+app.listen(PORT, () => {
     console.log("Server is running....");
 });
